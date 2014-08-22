@@ -31,4 +31,5 @@ if [ -f ${APP_DIR}/composer.json ] && [ ! -d ${APP_DIR}/vendor ]; then
     php ${APP_DIR}/composer.phar install
 else
     echo "   Missing composer.json file or 'vendor' directory exists. Skipping composer..."
+    ls -la ${APP_DIR}
 fi
