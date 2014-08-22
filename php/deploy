@@ -29,7 +29,8 @@ if [ -f ${APP_DIR}/composer.json ] && [ ! -d ${APP_DIR}/vendor ]; then
         wget --quiet http://getcomposer.org/composer.phar -O ${APP_DIR}/composer.phar
     fi
 
-    echo ${APP_DIR}
+    echo "   Move to ${APP_DIR}..."
+    cd ${APP_DIR}
     php ${APP_DIR}/composer.phar install
     cd -
 else
