@@ -10,12 +10,13 @@ source ${SOURCE_DIR}/base/deploy
 
 sudo /home/application/.venv/bin/python ${SOURCE_DIR}/php/apache_modules.py
 
-
+APP_DIR=/home/application/current
 echo ""
 echo ""
 echo ""
 echo "========================================"
 echo " Parsing Composer dependances..."
+echo ${APP_DIR}
 echo "========================================"
 echo ""
 # check for Composer dependencies and vendors are not bundled in the pack
@@ -31,5 +32,8 @@ if [ -f ${APP_DIR}/composer.json ] && [ ! -d ${APP_DIR}/vendor ]; then
     php ${APP_DIR}/composer.phar install
 else
     echo "   Missing composer.json file or 'vendor' directory exists. Skipping composer..."
+    echo "   pwd"
+    pwd
+    echo "   ls -la ${APP_DIR}"
     ls -la ${APP_DIR}
 fi
