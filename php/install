@@ -5,6 +5,7 @@ $SOURCE_DIR/base/install
 apt-get install apache2 php5 -y
 
 apt-get install -y php5-dev libpcre3-dev gcc make php5-mysql
+a2enmod rewrite
 git clone --depth=1 git://github.com/phalcon/cphalcon.git
 cd cphalcon/build
 ./install    
