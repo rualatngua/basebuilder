@@ -40,3 +40,9 @@ else
     echo "   ls -la ${APP_DIR}"
     ls -la ${APP_DIR}
 fi
+
+# check for application shell config and run it
+if [ -f ${APP_DIR}/deploy.sh ]; then
+    echo "   Running ${APP_DIR}/deploy.sh ..."
+    bash ${APP_DIR}/deploy.sh
+fi
