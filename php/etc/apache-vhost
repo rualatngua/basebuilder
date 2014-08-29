@@ -4,13 +4,13 @@ Listen 8888
 <VirtualHost *:8888>
 	ServerAdmin webmaster@tsuru
 
-	DocumentRoot /home/application/current
+	DocumentRoot /home/application/current/public
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride All
 		Require all denied
 	</Directory>
-	<Directory /home/application/current/>
+	<Directory /home/application/current/public/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride All
 		Order allow,deny
