@@ -2,11 +2,13 @@
 
 SOURCE_DIR=/var/lib/tsuru
 $SOURCE_DIR/base/install
-apt-get install apache2 php5 -y
+apt-get install apache2 php5 unzip -y
 
 apt-get install -y php5-dev libpcre3-dev gcc make php5-mysql
-git clone --depth=1 git://github.com/phalcon/cphalcon.git
-cd cphalcon/build
+wget https://github.com/phalcon/cphalcon/archive/1.3.2.zip
+unzip 1.3.2.zip
+rm -rf 1.3.2.zip
+cd cphalcon-1.3.2/build
 ./install    
 echo 'extension=phalcon.so' > /etc/php5/mods-available/phalcon.ini
 php5enmod phalcon
